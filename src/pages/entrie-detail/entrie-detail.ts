@@ -34,7 +34,7 @@ export class EntrieDetail {
   }
 
   goToSignature(){
-    let param = this.index;
+    let param = this.navParams.get('index');;
     this.navCtrl.push(SignaturePage, {param});
   }
 

@@ -12,11 +12,10 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
   templateUrl: 'signature.html'
 })
 export class SignaturePage {
-  index: number;
+  param: number;
 
   constructor(public navCtrl: NavController, private navParams: NavParams, public alertCtrl: AlertController) {
-    this.index = navParams.get('index');
-    console.log(this.index)
+    this.param = navParams.get('param');
   }
 
   ionViewDidLoad() {
