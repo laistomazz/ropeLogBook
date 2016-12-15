@@ -49,7 +49,7 @@
     <ion-item>
       <ion-icon name="hammer" item-left></ion-icon>
       Rigging Hours
-      <ion-badge item-right>{{ entrie?.ropehours }}</ion-badge>
+      <ion-badge item-right>{{ entrie?.rigginghours }}</ion-badge>
     </ion-item>  
     <ion-item>
       <ion-icon name="trending-up" item-left></ion-icon>
@@ -57,7 +57,7 @@
       <ion-badge item-right>{{ entrie?.maxheight }}</ion-badge>
     </ion-item>   
     
-    <button *ngIf="!entrie?.signature" ion-button block (click)="showPrompt()">Insert signature</button>
+    <button *ngIf="!entrie?.signature" ion-button block (click)="goToSignature()">Insert signature</button>
     <ion-item *ngIf="entrie?.signature">
       <ion-card-title>
         <ion-icon name="create"></ion-icon>

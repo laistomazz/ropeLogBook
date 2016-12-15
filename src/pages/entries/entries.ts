@@ -21,8 +21,9 @@ export class Entries {
   constructor(public navCtrl: NavController, private entriesService: EntriesService) {
     entriesService.load().subscribe(entries => {
       this.entriesLocal = entries;
-      window.localStorage.setItem('entries', JSON.stringify(this.entriesLocal) );
-
+      if( ! window.localStorage.getItem('entries') ){
+        window.localStorage.setItem('entries', JSON.stringify(this.entriesLocal) ); 
+      }
       this.entries = JSON.parse(window.localStorage.getItem('entries'));
     })
   }

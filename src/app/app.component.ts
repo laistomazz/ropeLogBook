@@ -5,7 +5,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { Entries } from '../pages/entries/entries';
-import { EntrieDetail } from '../pages/entrie-detail/entrie-detail';
+import { NewEntriePage } from '../pages/new-entrie/new-entrie';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +26,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Entries', component: Entries },
-      { title: 'Entrie Detail', component: EntrieDetail }
+      { title: 'New Entrie', component: NewEntriePage }
     ];
   }
 

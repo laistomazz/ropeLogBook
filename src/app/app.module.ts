@@ -4,15 +4,19 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Entries } from '../pages/entries/entries';
 import { EntrieDetail } from '../pages/entrie-detail/entrie-detail';
+import { NewEntriePage } from '../pages/new-entrie/new-entrie';
+import { SignaturePage } from '../pages/signature/signature';
 import { EntriesService } from '../providers/entries';
-//import { NewEntrie } from '../pages/new-entrie/new-entrie';
+
 //import { Signature } from '../pages/signature/signature';
 
 @NgModule({
   declarations: [
     MyApp,
     Entries,
-    EntrieDetail
+    EntrieDetail,
+    NewEntriePage,
+    SignaturePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -21,7 +25,9 @@ import { EntriesService } from '../providers/entries';
   entryComponents: [
     MyApp,
     Entries,
-    EntrieDetail
+    EntrieDetail,
+    NewEntriePage,
+    SignaturePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, EntriesService]
 })

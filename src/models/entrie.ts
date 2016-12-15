@@ -3,8 +3,8 @@ export interface Entrie {
     company: string;
     details: string;
     location: string;
-    ropeHours: number;
-    riggingGours: number;
-    maxHeight: number;
+    ropehours: number;
+    rigginghours: number;
+    maxheight: number;
     signature: boolean;
 }

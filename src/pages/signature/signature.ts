@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 /*
   Generated class for the Signature page.
@@ -11,12 +11,24 @@ import { NavController } from 'ionic-angular';
   selector: 'page-signature',
   templateUrl: 'signature.html'
 })
-export class Signature {
+export class SignaturePage {
+  index: number;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, private navParams: NavParams, public alertCtrl: AlertController) {
+    this.index = navParams.get('index');
+    console.log(this.index)
+  }
 
   ionViewDidLoad() {
-    console.log('Hello SignaturePage Page');
+  }
+
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Success',
+      subTitle: 'Your signature was registered',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }
