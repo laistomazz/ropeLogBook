@@ -16,19 +16,25 @@
 
 
 <ion-content padding>
-  <ion-list>
-
-    <ion-item>
-      <ion-label fixed>Name</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
+  <ion-card>
 
     <ion-item>
       <ion-label fixed>ID</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input style="border: 1px solid #000" #id type="number" value=""></ion-input>
     </ion-item>
 
-  </ion-list>
+    <ion-item>
+      <ion-card-title>
+        Insert your signature
+      </ion-card-title>
+    </ion-item>
 
-  <button ion-button color="primary" block (click)="showAlert()">Register Signature</button>
+    <canvas id="signature" style="border: 1px solid #000; width: 100%;" width="400" height="200"></canvas>
+
+  </ion-card>
+
+  <p>
+    <button ion-button color="danger" block (click)="clearSignature()">Clear Signature</button>
+    <button ion-button color="primary" block (click)="saveSignature(id.value)">Register Signature</button>
+  </p>
 </ion-content>

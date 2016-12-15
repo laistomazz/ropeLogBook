@@ -27,26 +27,25 @@ export class NewEntriePage {
     if( newDate == "" ||  newCompany == "" ||  newDetails == "" ||  newLocation == "" ||  newRopehours == "" ||  newRigginghours == "" ||  newMaxheight == "" ){
       this.showAlert();
       return;
-    } else{      
-      this.newEntrie = {
-        date: newDate,
-        company: newCompany,
-        details: newDetails,
-        location: newLocation,
-        ropehours: parseFloat(newRopehours),
-        rigginghours: parseFloat(newRigginghours),
-        maxheight: parseFloat( newMaxheight),
-        signature: false
-      }
-
-      this.entries = JSON.parse(window.localStorage.getItem('entries'));
-
-      this.entries.push(this.newEntrie);
-
-      window.localStorage.setItem('entries', JSON.stringify(this.entries) );
-
-      this.navCtrl.push(Entries);
     }
+    this.newEntrie = {
+      date: newDate,
+      company: newCompany,
+      details: newDetails,
+      location: newLocation,
+      ropehours: parseFloat(newRopehours),
+      rigginghours: parseFloat(newRigginghours),
+      maxheight: parseFloat( newMaxheight),
+      signature: false
+    }
+
+    this.entries = JSON.parse(window.localStorage.getItem('entries'));
+
+    this.entries.push(this.newEntrie);
+
+    window.localStorage.setItem('entries', JSON.stringify(this.entries) );
+
+    this.navCtrl.push(Entries);
   }
 
   showAlert() {

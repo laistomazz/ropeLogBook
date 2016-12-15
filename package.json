@@ -1,7 +1,7 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "ropeLogBook",
+  "author": "Hous Midia",
+  "homepage": "http://housmidia.com.br/",
   "private": true,
   "scripts": {
     "ionic:build": "ionic-app-scripts build",
@@ -37,5 +37,5 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "description": "githubIonic: An Ionic project"
+  "description": "Rope Log Book: An Ionic project"
 }
