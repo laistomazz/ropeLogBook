@@ -15,7 +15,6 @@ import { Entrie } from '../models/entrie';
 export class EntriesService {
 
   constructor(public http: Http) {
-    console.log('Hello Entries Provider');
   }
 
   load(): Observable<Entrie[]> {

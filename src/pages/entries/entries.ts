@@ -16,10 +16,14 @@ import { EntrieDetail } from '../entrie-detail/entrie-detail';
 })
 export class Entries {
   entries: Entrie[];
+  entriesLocal: Entrie[];
 
   constructor(public navCtrl: NavController, private entriesService: EntriesService) {
     entriesService.load().subscribe(entries => {
-      this.entries = entries;
+      this.entriesLocal = entries;
+      window.localStorage.setItem('entries', JSON.stringify(this.entriesLocal) );
+
+      this.entries = JSON.parse(window.localStorage.getItem('entries'));
     })
   }
 

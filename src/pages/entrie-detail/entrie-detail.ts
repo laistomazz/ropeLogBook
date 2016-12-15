@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { Entrie } from '../../models/entrie';
 import { EntriesService } from '../../providers/entries';
@@ -18,7 +18,7 @@ export class EntrieDetail {
   entrie: Entrie[];
   index: number;
 
-  constructor(public navCtrl: NavController, private navParams: NavParams, private entriesService: EntriesService) {
+  constructor(public navCtrl: NavController, private navParams: NavParams, private entriesService: EntriesService, public alertCtrl: AlertController) {
     this.index = navParams.get('index');
     entriesService.loadDetail(this.index).subscribe(entrie => {
       this.entrie = entrie;
@@ -26,6 +26,32 @@ export class EntrieDetail {
   }
 
   ionViewDidLoad() {
+  }
+
+    showPrompt() {
+    let prompt = this.alertCtrl.create({
+      title: 'Supervisor',
+      message: "Sign in to insert your signature",
+      inputs: [
+        {
+          name: 'username',
+          placeholder: 'username'
+        },
+        {
+          name: 'password',
+          placeholder: 'password'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Login',
+          handler: data => {
+            console.log('Login');
+          }
+        }
+      ]
+    });
+    prompt.present();
   }
 
 }

@@ -55,6 +55,17 @@
       <ion-icon name="trending-up" item-left></ion-icon>
       Max Height
       <ion-badge item-right>{{ entrie?.maxheight }}</ion-badge>
+    </ion-item>   
+    
+    <button *ngIf="!entrie?.signature" ion-button block (click)="showPrompt()">Insert signature</button>
+    <ion-item *ngIf="entrie?.signature">
+      <ion-card-title>
+        <ion-icon name="create"></ion-icon>
+        Signature
+      </ion-card-title>
+      <p>
+        Assinatura nome
+      </p>
     </ion-item>    
   </ion-card>
 </ion-content>

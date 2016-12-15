@@ -6,4 +6,5 @@ export interface Entrie {
     ropeHours: number;
     riggingGours: number;
     maxHeight: number;
+    signature: boolean;
 }
