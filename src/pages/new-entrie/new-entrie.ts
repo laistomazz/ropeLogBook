@@ -42,13 +42,11 @@ export class NewEntriePage {
     
     this.storage.get('entries').then((val) => {
        this.entries = JSON.parse(val);
-    })
+       this.entries.push(this.newEntrie);
+       this.storage.set('entries', JSON.stringify(this.entries) );
 
-    this.entries.push(this.newEntrie);
-
-    this.storage.set('entries', JSON.stringify(this.entries) );
-
-    this.navCtrl.push(Entries);
+       this.navCtrl.push(Entries);
+    });    
   }
 
   showAlert() {
