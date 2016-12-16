@@ -32,7 +32,7 @@
                 "ropehours": 1,
                 "rigginghours": 2,
                 "maxheight": 3,
-                "signature": true
+                "signature": false
             }
         ]
     }

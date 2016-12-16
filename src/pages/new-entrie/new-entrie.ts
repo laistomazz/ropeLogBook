@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { Entries } from '../entries/entries';
 import { Entrie } from '../../models/entrie';
@@ -18,7 +19,7 @@ export class NewEntriePage {
   newEntrie: Entrie;
   entries: any;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {}
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public storage: Storage) {}
 
   ionViewDidLoad() {
   }
@@ -38,12 +39,14 @@ export class NewEntriePage {
       maxheight: parseFloat( newMaxheight),
       signature: false
     }
-
-    this.entries = JSON.parse(window.localStorage.getItem('entries'));
+    
+    this.storage.get('entries').then((val) => {
+       this.entries = JSON.parse(val);
+    })
 
     this.entries.push(this.newEntrie);
 
-    window.localStorage.setItem('entries', JSON.stringify(this.entries) );
+    this.storage.set('entries', JSON.stringify(this.entries) );
 
     this.navCtrl.push(Entries);
   }

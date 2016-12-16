@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { Entries } from '../pages/entries/entries';
@@ -29,6 +30,6 @@ import { EntriesService } from '../providers/entries';
     NewEntriePage,
     SignaturePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, EntriesService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, EntriesService, Storage]
 })
 export class AppModule {}

@@ -61,10 +61,16 @@
     <ion-item *ngIf="entrie?.signature">
       <ion-card-title>
         <ion-icon name="create"></ion-icon>
+        Supervisor ID
+      </ion-card-title>
+      <p>
+        {{signature?.id}}
+      </p>
+      <ion-card-title>
         Signature
       </ion-card-title>
       <p>
-        Assinatura nome
+        <img alt="Signature" [src]="signature?.dataurl" style="width: 100%; height: auto; border: 1px solid #000"/>
       </p>
     </ion-item>    
   </ion-card>
